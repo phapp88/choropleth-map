@@ -1,4 +1,4 @@
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
@@ -9,13 +9,13 @@ const config = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          presets: ['env'],
+          presets: ['@babel/preset-env'],
         },
       },
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       title: 'US Education',
